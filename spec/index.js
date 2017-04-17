@@ -45,9 +45,13 @@ describe('eslint-config-inception', function () {
     expect(lint("console.log('no semicolon at the end')\n")).to.equal(msg)
   })
 
+  it('should complain about space before parenthesis for anonymous functions', function () {
+    const msg = 'Missing space before function parentheses.'
+    expect(lint('setTimeout(function() { return }, 100)\n')).to.equal(msg)
+  })
+
   it('should complain about space before function parenthesis', function () {
     const msg = 'Unexpected space before function parentheses.'
-    expect(lint('setTimeout(function () { return }, 100)\n')).to.equal(msg)
     expect(lint('function func () { return }\nfunc()')).to.equal(msg)
   })
 })

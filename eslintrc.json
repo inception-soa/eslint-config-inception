@@ -13,7 +13,7 @@
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
     "semi-spacing": ["error", { "before": false, "after": true }],
     "space-before-function-paren": ["error", {
-        "anonymous": "never",
+        "anonymous": "always",
         "named": "never",
         "asyncArrow": "ignore"
     }]
